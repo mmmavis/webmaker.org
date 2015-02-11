@@ -111,6 +111,11 @@ angular.module('webmakerApp', ['ngRoute', 'ui.bootstrap', 'webmakerApp.services'
           controller: 'homeController',
           title: 'Terms of Use'
         })
+        .when('/:locale/localweb', {
+          templateUrl: '/views/localweb.html',
+          controller: 'localWebController',
+          title: 'MOI'
+        })
         .when('/:locale', {
           templateUrl: '/views/home-3.html',
           controller: 'homeController',
