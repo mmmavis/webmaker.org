@@ -1,6 +1,9 @@
 {
   "name": "webmaker.org",
   "version": "1.1.133",
+  "engines": {
+    "node": "0.10.x"
+  },
   "scripts": {
     "test": "grunt validate",
     "start": "grunt dev",
