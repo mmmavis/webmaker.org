@@ -713,9 +713,4 @@ angular
         $scope.bannerBool = localStorage.getItem('localeBanner');
       });
     }
-  ])
-  .controller('localWebController', ['$scope', 'CONFIG',
-    function ($scope, config) {
-      console.log($scope);
-    }
   ]);
