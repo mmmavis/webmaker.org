@@ -95,7 +95,9 @@ module.exports = function (grunt) {
     gettext_finder: {
       files: ["views/*.html", "views/**/*.html"],
       options: {
-        pathToJSON: ["locale/en_US/webmaker.org.json"],
+        pathToJSON: ["locale/en_US/webmaker.org.json",
+                     "locale/en_US/localweb.json"
+                    ],
         ignoreKeys: grunt.file.readJSON("gtf-ignored-keys.json")
       },
     },
