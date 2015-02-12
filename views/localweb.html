@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="{{ localeInfo.lang }}" dir="{{ localeInfo.direction }}">
+<head>
+  <meta charset="utf-8">
+  {{ newrelic.getBrowserTimingHeader() | safe }}
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="csrf-token" content="{{ csrf }}">
+  <meta name="persona-email" content="{{ email }}">
+  <meta name="maker-id" content="{{ makerID }}">
+  <meta name="make-endpoint" content="{{ makeEndpoint }}">
+
+<!-- For sharing & search engines -->
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://webmaker.org/img/logo-og.png" />
+  <meta property="og:image:width" content="1400" />
+  <meta property="og:image:height" content="1400" />
+  <meta property="og:site_name" content="Webmaker" />
+  <meta property="og:determiner" content="" />
+  <meta property="og:locale" content="{{ localeInfo.lang | replace('-', '_') }}" />
+  {% for language in languages %}
+  <meta property="og:locale:alternate" content="{{ language | replace('-', '_') }}" />{% endfor %}
+  <meta property="og:title" content="{% block title %}{% endblock %} - {{ gettext("Mozilla Webmaker") }}" />
+  <meta property="og:description" content="We're a global community dedicated to teaching digital skills and web literacy. We explore, tinker and create together to build a web that's open and made by everyone." />
+  <meta property="og:url" content="https://webmaker.org/{{ localeInfo.lang }}{{ currentPath }}" />
+
+  <link rel="canonical" href="https://webmaker.org/{{ localeInfo.lang }}{{ currentPath }}" />
+  <meta property="description" content="We're a global community dedicated to teaching digital skills and web literacy. We explore, tinker and create together to build a web that's open and made by everyone." />
+  <!-- /sharing -->
+
+  <link rel="login" content="{{ loginAPI }}">
+
+  <title>{% block title %}{% endblock %} - {{ gettext("Mozilla Webmaker") }}</title>
+  {% block css %}{% endblock %}
+  <link href="//mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.{{ localeInfo.direction }}.css">
+
+  <!--[if lte IE 9]><link rel="stylesheet" href="/css/warning.css"><![endif]-->
+
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <!-- For JS error tracking purposes -->
+  <script src="/js/lib/error-track.js" async></script>
+</head>
+
+<body id="moi-splash" {% if view %}class="{{ view }}"{% endif %}>
+
+<div id="browser-warning">
+  <p>{{ gettext("browserUpgradeWarning") | safe }}</p>
+</div>
+
+<div class="webmaker-outer-wrapper">
+
+  {% block header %}
+  <div id="webmaker-nav">
+
+  </div>
+
+  {% endblock %}
+
+  <main id="content" class="content {% if page != 'events' %} clearfix {% endif %}">
+
+
+    <div>
+      <div id="moi-panel">
+        <div class="container">
+          <div class="row">
+            <section class="col-sm-7">
+              <h1>Empowering the next billion citizens of the web</h1>
+              <p class="lead">
+                Mozilla is working to ensure that the next billion people to come online for the first time through their smartphones will discover a Web that's open, accessible and relevant.
+              </p>
+            </section>
+            <div class="col-sm-offset-1 col-sm-4">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <a class="btn btn-default moi-btn" href="mailto:mobileopportunity@mozilla.org">
+                <i class="fa fa-users"></i>
+                Partner with us
+              </a>
+              <a class="btn btn-default moi-btn" href="http://mzl.la/webmaker">
+                <i class="fa fa-share-square-o"></i>
+                Try the open beta
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section>
+        <div class="container">
+          <div class="row section-header">
+            <div class="col-sm-12">
+              <h3>Understanding Users</h3>
+              <p class="lead">
+                Mozilla is leading a research program which aims to study technology and design approaches that enable greater participation in mobile digital life and grow local content creation.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <figure>
+                <img src="/img/moi/global-users.png" alt="Global Users">
+              </figure>
+            </div>
+            <div class="col-sm-6">
+              <div id="moi-webmaker-research-reports">
+                <a class="header" href="">
+                  <div class="icon">
+                    <i class="fa fa-file-text fa-3x"></i>
+                  </div>
+                  <div class="text">
+                    <div class="the-title">
+                      Webmaker synthesis research report
+                    </div>
+                    <p>
+                      <em>In 2014 and 2015, we conducted on-the-ground studies in Bangladesh, India and Kenya.</em>
+                    </p>
+                  </div>
+                </a>
+                <ul>
+                  <li>
+                    <a href="http://mzl.la/bangladesh">Webmaker Bangladesh research report</a>
+                  </li>
+                  <li>
+                    <a href="http://mzl.la/kenya">Webmaker Kenya research report</a>
+                  </li>
+                  <li>
+                    <a href="">Webmaker India research report</a>
+                  </li>
+                  <li>
+                    <a href="http://blog.mozilla.org/m4d/">Webmaker mobile for development blog</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="moi-enabling-digital-creativity">
+        <div class="container">
+          <div class="row section-header">
+            <div class="col-sm-12">
+              <h3>Enabling Digital Creativity</h3>
+              <p class="lead">
+                Mozilla is building Webmaker, a free & open source mobile content creation app.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <p>
+                Webmaker helps smartphone users become creators of a Web that will improve their lives and communities, by making simple apps for things like promoting a small business, sharing community news, or building a lesson plan for students.
+              </p>
+              <p>
+                Webmaker is available in over 20 languages and backed by a growing community of volunteer digital skills mentors. It will be available for Android, Firefox OS, and modern mobile browsers later this year.
+              </p>
+              <div>
+                <a class="btn btn-primary moi-btn" href="http://mzl.la/webmaker">
+                  <i class="fa fa-share-square-o"></i>
+                  Try the open beta
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-offset-1 col-sm-4">
+              <figure>
+                <img src="/img/moi/creativity.jpg" alt="Creativity" class="round" />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="moi-partner-with-mozilla">
+        <div class="container">
+          <div class="row section-header">
+            <div class="col-sm-12">
+              <h2>Partner with Mozilla</h2>
+              <p class="lead">
+              Let’s ensure the next generation of web users have the skills to create a locally relevant web. We are a global movement with volunteers in over 30 countries. If you are a mobile operator or NGO, partner with us to offer digital skills training to your most engaged users.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="country-container">
+                <div class="flag-container">
+                  <span class="flag-icon flag-icon-bd"></span>
+                </div>
+                <div class="name">
+                  Mozilla Bangladesh
+                </div>
+                <div class="language">বাংলা</div>
+              </div>
+              <div class="country-container">
+                <div class="flag-container">
+                  <span class="flag-icon flag-icon-br"></span>
+                </div>
+                <div class="name">
+                  Mozilla Brazil
+                </div>
+                <div class="language">português do Brasil</div>
+              </div>
+              <div class="country-container">
+                <div class="flag-container">
+                  <span class="flag-icon flag-icon-co"></span>
+                </div>
+                <div class="name">
+                  Mozilla Colombia
+                </div>
+                <div class="language">español</div>
+              </div>
+              <div class="country-container">
+                <div class="flag-container">
+                  <span class="flag-icon flag-icon-in"></span>
+                </div>
+                <div class="name">
+                  Mozilla India
+                </div>
+                <div class="language">हिन्दी</div>
+              </div>
+              <div class="country-container">
+                <div class="flag-container">
+                  <span class="flag-icon flag-icon-id"></span>
+                </div>
+                <div class="name">
+                  Mozilla Indonesia
+                </div>
+                <div class="language">Bahasa Indonesia</div>
+              </div>
+              <div class="country-container">
+                <div class="flag-container">
+                  <span class="flag-icon flag-icon-ke"></span>
+                </div>
+                <div class="name">
+                  Mozilla Kenya
+                </div>
+                <div class="language">Swahili</div>
+              </div>
+              <div class="country-container">
+                <div class="flag-container">
+                  <span class="flag-icon flag-icon-mx"></span>
+                </div>
+                <div class="name">
+                  Mozilla Mexico
+                </div>
+                <div class="language">español</div>
+              </div>
+              <div class="country-container">
+                <div class="flag-container">
+                  <span class="flag-icon flag-icon-ng"></span>
+                </div>
+                <div class="name">
+                  Mozilla Nigeria
+                </div>
+                <div class="language">English</div>
+              </div>
+              <div class="country-container">
+                <div class="flag-container">
+                  <span class="flag-icon flag-icon-ph"></span>
+                </div>
+                <div class="name">
+                  Mozilla Philippines
+                </div>
+                <div class="language">English</div>
+              </div>
+              <div class="country-container">
+                <div class="flag-container">
+                  <span class="flag-icon flag-icon-za"></span>
+                </div>
+                <div class="name">
+                  Mozilla South Africa
+                </div>
+                <div class="language">English</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <a class="btn btn-default moi-btn" href="mailto:mobileopportunity@mozilla.org">
+                <i class="fa fa-users"></i>
+                Partner with us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row section-header">
+            <div class="col-sm-12">
+              <h3>Partners</h3>
+              <p class="lead">
+                Mozilla is proud to partner with these mobile operators, educators, international development institutions, and NGOs who are interested in positively shaping the future of the mobile Web.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="moi-quotes">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              hi
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+
+
+
+  </main>
+
+  <footer class="footer">
+
+    {% block footer %}
+    <div id="footer-actions">
+      {% if layout %}
+      <a class="load-more">{{ gettext("Load more") }}
+        <span class="icon-angle-down"></span></a>
+      {% endif %}
+    </div>
+    {% endblock %}
+
+    <div class="partnerWrapper">
+      <nav class="navbar-footer">
+        <div class="container">
+          <ul>
+            <li><a href="/{{localeInfo.lang}}/about">{{ gettext('About') }}</a></li>
+            <li><a href="/{{localeInfo.lang}}/mentor">{{ gettext('Teach') }}</a></li>
+            <li>
+              <a href="https://sendto.mozilla.org/page/contribute/join-mozilla?source=join_link">
+                {{ gettext('Donate') }}
+              </a>
+            </li>
+            <li><a href="mailto:help@webmaker.org">{{ gettext('Contact') }}</a></li>
+            <li><a href="/{{localeInfo.lang}}/privacy">{{ gettext('Privacy') }}</a></li>
+            <li><a href="/{{localeInfo.lang}}/terms">{{ gettext('Legal') }}</a></li>
+            <li>
+              <a href="https://support.mozilla.org/products/webmaker">
+                {{ gettext('Help') }}
+              </a>
+            </li>
+          </ul>
+
+          <ul class="secondary">
+            <li><span class="fa icon-twitter"></span>
+              <a href="https://twitter.com/webmaker">
+                @webmaker
+              </a>
+            </li>
+            <li><span class="fa icon-file-text-alt"></span>
+              <a href="https://blog.webmaker.org">
+                {{ gettext('Blog') }}
+              </a>
+            </li>
+          </ul>
+
+          <div class="moz-logo">
+            <a href="https://mozilla.org/">
+              <img src="/img/logo-mozilla-white.png" alt="mozilla logo" height="41" width="100"/>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <div class="mobile"></div>
+</div>
+
+<script src="{{ personaHostname }}/include.js"></script>
+<script src="/bower_components/webmaker-login-ux/dist/min/webmakerLogin.min.js"></script>
+<script id="require-js" src="/bower_components/requirejs/require.js"
+  data-main="{% block require_main %}/js/main.js{% endblock %}"
+  data-page="{% block require_page %}{% endblock %}">
+</script>
+
+{% block scripts %}{% endblock %}
+{% if ga_account %}
+<script id="google-analytics-js" src="/js/lib/google-analytics.js"
+  data-ga-account="{{ ga_account }}"
+  data-ga-domain="{{ ga_domain }}"
+  async>
+</script>
+{% endif %}
+<script src="https://cdn.optimizely.com/js/206878104.js"></script>
+</body>
+</html>
