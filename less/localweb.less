@@ -37,8 +37,15 @@
     vertical-align: middle;
     border: 0 none;
   }
+  figure {
+    img {
+      float: none;
+    }
+  }
   .lead {
     font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
   }
   .section-header {
     text-align: center;
@@ -56,9 +63,9 @@
   section {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    @media @retina (min-width: @screen-sm-min) {
-      padding-top: 5rem;
-      padding-bottom: 5rem;
+    @media screen and (min-width: @screen-sm-min) {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
     }
   }
   footer {
@@ -126,16 +133,20 @@
 #moi-panel {
   color: @white;
   background-color: @darkgreen;
-  padding-top: 8rem;
   padding-bottom: 8rem;
   background-image: url("/img/moi/hand-mobile.png"),
                     url("/img/moi/background-green.jpg");
   background-repeat: no-repeat, no-repeat;
   background-size: 70% auto, cover;
   background-position: 100% 70%, 0 0;
+  border-top: .2rem solid @white;
   h1 {
     font-size: 5rem;
     margin-bottom: 3rem;
+  }
+  section {
+    padding-top: 0;
+    padding-bottom: 0;
   }
   @media @standard-def {
     background-image: url("/img/moi/hand-mobile.png"),
@@ -158,7 +169,7 @@
     background-position: 100% 70%, 0 0;
   }
   @media screen and (min-width: @screen-sm-min) {
-    background-size: auto 75%, cover;
+    background-size: auto 60%, cover;
     background-position: 45rem 50%, 0 0;
   }
   @media screen and (min-width: 830px) {
@@ -174,15 +185,27 @@
     background-position: 70rem 50%, 0 0;
   }
   @media screen and (min-width: @screen-lg-min) {
-    background-position: 80rem 50%, 0 0;
+    background-position: 85rem 50%, 0 0;
   }
   @media screen and (min-width: 1400px) {
+    background-position: 100rem 50%, 0 0;
+  }
+  @media screen and (min-width: 1700px) {
     background-position: 100% 50%, 0 0;
   }
-  @media screen and (min-width: 1750px) {
-    background-position: right 50%, 0 0;
+  #tabzilla {
+    display: block;
   }
-
+  .webmaker-workmark {
+    margin-top: 1rem;
+    max-width: 16rem;
+    @media screen and (min-width: @screen-sm-min) {
+      max-width: 20rem;
+    }
+  }
+  .big-head-row {
+    padding-top: 8rem;
+  }
   .lead {
     font-weight: normal;
     padding-bottom: 27rem;
@@ -199,6 +222,17 @@
       &:last-child {
         margin-left: 1rem;
       }
+    }
+  }
+}
+
+#moi-understanding-users {
+  img {
+    max-width: 30rem;
+    margin: 2rem 0;
+    @media screen and (min-width: @screen-sm-min) {
+      max-width: 100%;
+      margin: 0;
     }
   }
 }
@@ -252,7 +286,12 @@
 }
 
 #moi-enabling-digital-creativity {
-
+  .pic-creativity {
+    margin: 0 0 4rem 0;
+    @media screen and (min-width: @screen-sm-min) {
+      margin: 0;
+    }
+  }
 }
 
 #moi-partner-with-mozilla {
@@ -288,6 +327,44 @@
       content: ")";
     }
 
+  }
+}
+
+#moi-partners {
+  .tier-one-partners-row {
+    padding-bottom: 5rem;
+    margin-bottom: 5rem;
+    border-bottom: .1rem solid @moi-border-grey;
+  }
+  .tier-one-partners {
+    line-height: 11rem;
+    img {
+      max-width: 11rem;
+    }
+    @media screen and (min-width: @screen-sm-min) {
+      line-height: 17rem;
+      img {
+        max-width: 17rem;
+      }
+    }
+  }
+  .tier-two-partners-row {
+
+  }
+  .tier-two-partners {
+    float: left;
+    width: 33.33%;
+    margin-bottom: 2rem;
+    @media screen and (min-width: @screen-sm-min) {
+      width: 20%;
+      margin-bottom: 4rem;
+    }
+    .logo-placeholder {
+      background: #BBB;
+      width: 80%;
+      height: 10rem;
+      margin: 0 auto;
+    }
   }
 }
 
