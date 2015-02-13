@@ -51,7 +51,7 @@
     "message": "Enabling Digital Creativity",
     "description": "Headline of Enabling Digital Creativity section on /localweb"
   },
-  "Mozilla is building webmaker": {
+  "Mozilla is building Webmaker": {
     "message": "Mozilla is building Webmaker, a free & open source mobile content creation app.",
     "description": "Subhead of Enabling Digital Creativity section on /localweb"
   },
@@ -110,6 +110,10 @@
   "Mozilla South Africa": {
     "message": "Mozilla South Africa",
     "description": "Mozilla South Africa"
+  },
+  "Get in touch": {
+    "message": "Get in touch",
+    "description": "Get in touch button text"
   },
   "Partners": {
     "message": "Partners",

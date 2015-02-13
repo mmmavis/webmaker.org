@@ -5,9 +5,6 @@
   {{ newrelic.getBrowserTimingHeader() | safe }}
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="csrf-token" content="{{ csrf }}">
-  <meta name="persona-email" content="{{ email }}">
-  <meta name="maker-id" content="{{ makerID }}">
-  <meta name="make-endpoint" content="{{ makeEndpoint }}">
 
 <!-- For sharing & search engines -->
   <meta property="og:type" content="website" />
@@ -26,8 +23,6 @@
   <link rel="canonical" href="https://webmaker.org/{{ localeInfo.lang }}{{ currentPath }}" />
   <meta property="description" content="We're a global community dedicated to teaching digital skills and web literacy. We explore, tinker and create together to build a web that's open and made by everyone." />
   <!-- /sharing -->
-
-  <link rel="login" content="{{ loginAPI }}">
 
   <title>{% block title %}{% endblock %} - {{ gettext("Mozilla Webmaker") }}</title>
   {% block css %}{% endblock %}
@@ -49,13 +44,6 @@
 
 <div class="webmaker-outer-wrapper">
 
-  {% block header %}
-  <div id="webmaker-nav">
-
-  </div>
-
-  {% endblock %}
-
   <main id="content" class="content {% if page != 'events' %} clearfix {% endif %}">
 
 
@@ -63,6 +51,12 @@
       <div id="moi-panel">
         <div class="container">
           <div class="row">
+            <div class="col-sm-12">
+              <a href="https://webmaker.org"><img src="img/moi/webmaker-wordmark.png" alt="Webmaker Wordmark" class="webmaker-workmark"></a>
+              <a href="https://www.mozilla.org/" id="tabzilla">mozilla</a>
+            </div>
+          </div>
+          <div class="row big-head-row">
             <section class="col-sm-7">
               <h1>{{ gettext("Empowering the next billion citizens of the web") }}</h1>
               <p class="lead">
@@ -75,18 +69,19 @@
           <div class="row">
             <div class="col-sm-12 text-center">
               <a class="btn btn-default moi-btn" href="mailto:mobileopportunity@mozilla.org">
-                <i class="fa fa-users"></i>
+                <!-- <i class="fa fa-users"></i> -->
+                <img src="img/moi/font-awesome-fa-users.png">
                 {{ gettext("Partner with us") }}
               </a>
               <a class="btn btn-default moi-btn" href="http://mzl.la/webmaker">
-                <i class="fa fa-share-square-o"></i>
+                <i class="fa icon-share"></i>
                 {{ gettext("Try the open beta") }}
               </a>
             </div>
           </div>
         </div>
       </div>
-      <section>
+      <section id="moi-understanding-users">
         <div class="container">
           <div class="row section-header">
             <div class="col-sm-12">
@@ -97,16 +92,16 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-offset-1 col-sm-4 text-center">
               <figure>
                 <img src="/img/moi/global-users.png" alt="Global Users">
               </figure>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-offset-1 col-sm-6">
               <div id="moi-webmaker-research-reports">
                 <a class="header" href="">
                   <div class="icon">
-                    <i class="fa fa-file-text fa-3x"></i>
+                    <i class="fa icon-file-text icon-3x"></i>
                   </div>
                   <div class="text">
                     <div class="the-title">
@@ -139,6 +134,11 @@
       <section id="moi-enabling-digital-creativity">
         <div class="container">
           <div class="row section-header">
+            <div class="hidden-sm hidden-md hidden-lg col-sm-12">
+              <figure class="pic-creativity">
+                <img src="/img/moi/creativity.jpg" alt="Creativity" class="round" />
+              </figure>
+            </div>
             <div class="col-sm-12">
               <h3>{{ gettext("Enabling Digital Creativity") }}</h3>
               <p class="lead">
@@ -156,13 +156,13 @@
               </p>
               <div>
                 <a class="btn btn-primary moi-btn" href="http://mzl.la/webmaker">
-                  <i class="fa fa-share-square-o"></i>
+                  <i class="fa icon-share"></i>
                   {{ gettext("Try the open beta") }}
                 </a>
               </div>
             </div>
-            <div class="col-sm-offset-1 col-sm-4">
-              <figure>
+            <div class="hidden-xs col-sm-offset-1 col-sm-4">
+              <figure class="pic-creativity">
                 <img src="/img/moi/creativity.jpg" alt="Creativity" class="round" />
               </figure>
             </div>
@@ -277,13 +277,13 @@
             <div class="col-sm-12 text-center">
               <a class="btn btn-default moi-btn" href="mailto:mobileopportunity@mozilla.org">
                 <i class="fa fa-users"></i>
-                {{ gettext("Partner with us") }}
+                {{ gettext("Get in touch") }}
               </a>
             </div>
           </div>
         </div>
       </section>
-      <section>
+      <section id="moi-partners">
         <div class="container">
           <div class="row section-header">
             <div class="col-sm-12">
@@ -291,6 +291,48 @@
               <p class="lead">
                 {{ gettext("Mozilla is proud to partner") }}
               </p>
+            </div>
+          </div>
+          <div class="row text-center tier-one-partners-row">
+            <div class="col-xs-6 col-sm-offset-3 col-sm-3 tier-one-partners">
+              <a href="https://mozilla.org"><img src="img/moi/mozilla-wordmark.png" alt="Mozilla Wordmark"></a>
+            </div>
+            <div class="col-xs-6 col-sm-3 tier-one-partners">
+              <a href="http://gsma.com/"><img src="img/moi/GSMA-logo.png" alt="GSMA wordmark"></a>
+            </div>
+          </div>
+          <div class="row text-center tier-two-partners-row">
+            <div class="col-sm-12">
+              <div class="tier-two-partners">
+                <div class="logo-placeholder">logo</div>
+              </div>
+              <div class="tier-two-partners">
+                <div class="logo-placeholder">logo</div>
+              </div>
+              <div class="tier-two-partners">
+                <div class="logo-placeholder">logo</div>
+              </div>
+              <div class="tier-two-partners">
+                <div class="logo-placeholder">logo</div>
+              </div>
+              <div class="tier-two-partners">
+                <div class="logo-placeholder">logo</div>
+              </div>
+              <div class="tier-two-partners">
+                <div class="logo-placeholder">logo</div>
+              </div>
+              <div class="tier-two-partners">
+                <div class="logo-placeholder">logo</div>
+              </div>
+              <div class="tier-two-partners">
+                <div class="logo-placeholder">logo</div>
+              </div>
+              <div class="tier-two-partners">
+                <div class="logo-placeholder">logo</div>
+              </div>
+              <div class="tier-two-partners">
+                <div class="logo-placeholder">logo</div>
+              </div>
             </div>
           </div>
         </div>
@@ -344,19 +386,6 @@
             </li>
           </ul>
 
-          <ul class="secondary">
-            <li><span class="fa icon-twitter"></span>
-              <a href="https://twitter.com/webmaker">
-                @webmaker
-              </a>
-            </li>
-            <li><span class="fa icon-file-text-alt"></span>
-              <a href="https://blog.webmaker.org">
-                {{ gettext('Blog') }}
-              </a>
-            </li>
-          </ul>
-
           <div class="moz-logo">
             <a href="https://mozilla.org/">
               <img src="/img/logo-mozilla-white.png" alt="mozilla logo" height="41" width="100"/>
@@ -366,16 +395,9 @@
       </nav>
     </div>
   </footer>
-
-  <div class="mobile"></div>
 </div>
 
-<script src="{{ personaHostname }}/include.js"></script>
-<script src="/bower_components/webmaker-login-ux/dist/min/webmakerLogin.min.js"></script>
-<script id="require-js" src="/bower_components/requirejs/require.js"
-  data-main="{% block require_main %}/js/main.js{% endblock %}"
-  data-page="{% block require_page %}{% endblock %}">
-</script>
+<script src="https://mozorg.cdn.mozilla.net/tabzilla/tabzilla.js"></script>
 
 {% block scripts %}{% endblock %}
 {% if ga_account %}
