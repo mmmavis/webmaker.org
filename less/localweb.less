@@ -8,9 +8,18 @@
 
 @body-grey: #333;
 @moi-quote-grey: #F2F2F2;
+@moi-quotation-mark-grey: #898F95;
 @moi-border-grey: #DDD;
 @moi-block-link-bg: #F9F9F9;
 @moi-block-link-bg-hover: #F5F5F5;
+
+.moi-open-sans {
+  font-family: "Open Sans","Helvetica Neue",sans-serif;
+}
+
+.moi-open-sans-light {
+  font-family: "Open Sans Light","Helvetica Neue",sans-serif;
+}
 
 #moi-splash {
   background: @white;
@@ -43,6 +52,7 @@
     }
   }
   .lead {
+    .moi-open-sans-light;
     font-size: 2rem;
     margin-top: 2rem;
     margin-bottom: 5rem;
@@ -208,6 +218,7 @@
   }
   .lead {
     font-weight: normal;
+    .moi-open-sans;
     padding-bottom: 27rem;
     @media screen and (min-width: @screen-sm-min) {
       padding-bottom: 3rem;
@@ -266,6 +277,7 @@
     }
   }
   p {
+    .moi-open-sans-light;
     color: @body-grey;
   }
   ul {
@@ -373,4 +385,55 @@
   background: @moi-quote-grey;
   padding-top: 6rem;
   padding-bottom: 6rem;
+  .quote-container {
+    .the-quote {
+      position: relative;
+      padding: 2rem;
+      .quotation-mark {
+        font-family: Georgia, Serif;
+        font-size: 7.2rem;
+        line-height: 1;
+        color: @moi-quotation-mark-grey;
+        position: absolute;
+      }
+      &:before {
+        .quotation-mark;
+        content: "\201C";
+        top: 0;
+        left: 0;
+      }
+      &:after {
+        .quotation-mark;
+        content: "\201D";
+        bottom: -3rem;
+        right: 0;
+      }
+      p {
+        .moi-open-sans-light;
+        font-style: italic;
+        font-size: 2rem;
+        line-height: 2.7rem;
+        padding: 0 4rem;
+        // border: .1rem solid red;
+         @media screen and (min-width: @screen-sm-min) {
+          font-size: 2.4rem;
+          line-height: 3.2rem;
+        }
+      }
+    }
+    a.logo {
+      display: inline-block;
+      height: 3rem;
+      padding: 2rem 3rem;
+      border: .1rem solid @moi-border-grey;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+    .author {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+  }
 }

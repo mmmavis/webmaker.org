@@ -122,5 +122,29 @@
   "Mozilla is proud to partner": {
     "message": "Mozilla is proud to partner with these mobile operators, educators, international development institutions, and NGOs who are interested in positively shaping the future of the mobile Web.",
     "description": "Subhead of Partners section on /localweb"
+  },
+  "Quote 1 Quote": {
+    "message": "Mozilla and GSMA partner to bring the mobile Web and content creation tools to the next 4 billion",
+    "description": "Quote #1"
+  },
+  "Quote 1 Author": {
+    "message": "Abhimanyu Ghoshal",
+    "description": "Quote #1 Author"
+  },
+  "Quote 2 Quote": {
+    "message": "Mozilla and mobile operators want to make the web more global and diverse",
+    "description": "Quote #2"
+  },
+  "Quote 2 Author": {
+    "message": "David Meyer",
+    "description": "Quote #2 Author"
+  },
+  "Quote 3 Quote": {
+    "message": "Mozilla isn’t simply concerned about people in developing countries not having good local content on their mobile devices. It’s doing something about it.",
+    "description": "Quote #3"
+  },
+  "Quote 3 Author": {
+    "message": "Mark Sullivan",
+    "description": "Quote #3 Author"
   }
 }
