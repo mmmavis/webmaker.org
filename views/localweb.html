@@ -46,7 +46,7 @@
 
     <main id="content" class="content {% if page != 'events' %} clearfix {% endif %}">
 
-
+      <!-- Big hero banner section ===== -->
       <div>
         <div id="moi-panel">
           <div class="container">
@@ -68,7 +68,7 @@
             </div>
             <div class="row">
               <div class="col-sm-12 text-center">
-                <a class="btn btn-default moi-btn" href="mailto:mobileopportunity@mozilla.org">
+                <a class="btn btn-default moi-btn go-to-anchor-btn" href="#partner">
                   <!-- <i class="fa fa-users"></i> -->
                   <img src="img/moi/font-awesome-fa-users.png" alt="FontAwesome users icon">
                   {{ gettext("Partner with us") }}
@@ -81,6 +81,7 @@
             </div>
           </div>
         </div>
+        <!-- Video section ===== -->
         <section id="moi-video">
           <div class="container">
             <div class="row section-header">
@@ -94,56 +95,7 @@
             </div>
           </div>
         </section>
-        <section id="moi-understanding-users">
-          <div class="container">
-            <div class="row section-header">
-              <div class="col-sm-12">
-                <h3>{{ gettext("Understanding Users") }}</h3>
-                <p class="lead">
-                  {{ gettext("Mozilla is leading a research program") }}
-                </p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-offset-1 col-sm-4 text-center">
-                <figure>
-                  <img src="/img/moi/global-users.png" alt="Global Users">
-                </figure>
-              </div>
-              <div class="col-sm-offset-1 col-sm-6">
-                <div id="moi-webmaker-research-reports">
-                  <a class="header" href="">
-                    <div class="icon">
-                      <i class="fa icon-file-text icon-3x"></i>
-                    </div>
-                    <div class="text">
-                      <div class="the-title">
-                        {{ gettext("Webmaker synthesis research report") }}
-                      </div>
-                      <p>
-                        <em>{{ gettext("In 2014 and 2015, we conducted on-the-ground studies in Bangladesh, India and Kenya.") }}</em>
-                      </p>
-                    </div>
-                  </a>
-                  <ul>
-                    <li>
-                      <a href="http://mzl.la/bangladesh">{{ gettext("Webmaker Bangladesh research report") }}</a>
-                    </li>
-                    <li>
-                      <a href="http://mzl.la/kenya">{{ gettext("Webmaker Kenya research report") }}</a>
-                    </li>
-                    <li>
-                      <a href="">{{ gettext("Webmaker India research report") }}</a>
-                    </li>
-                    <li>
-                      <a href="http://blog.mozilla.org/m4d/">{{ gettext("Webmaker mobile for development blog") }}</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <!-- Enabling Digital Creativity section ===== -->
         <section id="moi-enabling-digital-creativity">
           <div class="container">
             <div class="row section-header">
@@ -182,120 +134,175 @@
             </div>
           </div>
         </section>
-        <section id="moi-partner-with-mozilla">
+        <!-- Understanding Users section ===== -->
+        <section id="moi-understanding-users">
           <div class="container">
             <div class="row section-header">
               <div class="col-sm-12">
-                <h2>{{ gettext("Partner with Mozilla") }}</h2>
+                <h3>{{ gettext("Understanding Users") }}</h3>
                 <p class="lead">
-                {{ gettext("Let’s ensure the next generation of web users") }}
+                  {{ gettext("Mozilla is leading a research program") }}
                 </p>
               </div>
             </div>
             <div class="row">
-              <div class="col-sm-12">
-                <div class="country-container">
-                  <div class="flag-container">
-                    <span class="flag-icon flag-icon-bd"></span>
-                  </div>
-                  <div class="name">
-                    {{ gettext("Mozilla Bangladesh") }}
-                  </div>
-                  <div class="language">বাংলা</div>
-                </div>
-                <div class="country-container">
-                  <div class="flag-container">
-                    <span class="flag-icon flag-icon-br"></span>
-                  </div>
-                  <div class="name">
-                    {{ gettext("Mozilla Brazil") }}
-                  </div>
-                  <div class="language">português do Brasil</div>
-                </div>
-                <div class="country-container">
-                  <div class="flag-container">
-                    <span class="flag-icon flag-icon-co"></span>
-                  </div>
-                  <div class="name">
-                    {{ gettext("Mozilla Colombia") }}
-                  </div>
-                  <div class="language">español</div>
-                </div>
-                <div class="country-container">
-                  <div class="flag-container">
-                    <span class="flag-icon flag-icon-in"></span>
-                  </div>
-                  <div class="name">
-                    {{ gettext("Mozilla India") }}
-                  </div>
-                  <div class="language">हिन्दी</div>
-                </div>
-                <div class="country-container">
-                  <div class="flag-container">
-                    <span class="flag-icon flag-icon-id"></span>
-                  </div>
-                  <div class="name">
-                    {{ gettext("Mozilla Indonesia") }}
-                  </div>
-                  <div class="language">Bahasa Indonesia</div>
-                </div>
-                <div class="country-container">
-                  <div class="flag-container">
-                    <span class="flag-icon flag-icon-ke"></span>
-                  </div>
-                  <div class="name">
-                    {{ gettext("Mozilla Kenya") }}
-                  </div>
-                  <div class="language">Swahili</div>
-                </div>
-                <div class="country-container">
-                  <div class="flag-container">
-                    <span class="flag-icon flag-icon-mx"></span>
-                  </div>
-                  <div class="name">
-                    {{ gettext("Mozilla Mexico") }}
-                  </div>
-                  <div class="language">español</div>
-                </div>
-                <div class="country-container">
-                  <div class="flag-container">
-                    <span class="flag-icon flag-icon-ng"></span>
-                  </div>
-                  <div class="name">
-                    {{ gettext("Mozilla Nigeria") }}
-                  </div>
-                  <div class="language">English</div>
-                </div>
-                <div class="country-container">
-                  <div class="flag-container">
-                    <span class="flag-icon flag-icon-ph"></span>
-                  </div>
-                  <div class="name">
-                    {{ gettext("Mozilla Philippines") }}
-                  </div>
-                  <div class="language">English</div>
-                </div>
-                <div class="country-container">
-                  <div class="flag-container">
-                    <span class="flag-icon flag-icon-za"></span>
-                  </div>
-                  <div class="name">
-                    {{ gettext("Mozilla South Africa") }}
-                  </div>
-                  <div class="language">English</div>
-                </div>
+              <div class="col-sm-offset-1 col-sm-4 text-center">
+                <figure>
+                  <img src="/img/moi/global-users.png" alt="Global Users">
+                </figure>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-12 text-center">
-                <a class="btn btn-default moi-btn" href="mailto:mobileopportunity@mozilla.org">
-                  <i class="fa fa-users"></i>
-                  {{ gettext("Get in touch") }}
-                </a>
+              <div class="col-sm-offset-1 col-sm-6">
+                <div id="moi-webmaker-research-reports">
+                  <a class="header" href="">
+                    <div class="icon">
+                      <i class="fa icon-file-text icon-3x"></i>
+                    </div>
+                    <div class="text">
+                      <div class="the-title">
+                        {{ gettext("A Locally Relevant Web: Early Research & Recommendations") }}
+                      </div>
+                      <p>
+                        <em>{{ gettext("In 2014 and 2015, we conducted on-the-ground studies in Bangladesh, India and Kenya.") }}</em>
+                      </p>
+                    </div>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="http://mzl.la/bangladesh">{{ gettext("Webmaker Bangladesh research report") }}</a>
+                    </li>
+                    <li>
+                      <a href="http://mzl.la/kenya">{{ gettext("Webmaker Kenya research report") }}</a>
+                    </li>
+                    <li>
+                      <a href="">{{ gettext("Webmaker India research report") }}</a>
+                    </li>
+                    <li>
+                      <a href="http://blog.mozilla.org/m4d/">{{ gettext("Webmaker mobile for development blog") }}</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </section>
+        <!-- Partner with Mozilla section ===== -->
+        <div id="partner"> <!-- to enable #partner on page anchor -->
+          <section id="moi-partner-with-mozilla">
+            <div class="container">
+              <div class="row section-header">
+                <div class="col-sm-12">
+                  <h2>{{ gettext("Partner with Mozilla") }}</h2>
+                  <p class="lead">
+                  {{ gettext("Let’s ensure the next generation of web users") | safe }}
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="country-container">
+                    <div class="flag-container">
+                      <span class="flag-icon flag-icon-bd"></span>
+                    </div>
+                    <div class="name">
+                      {{ gettext("Mozilla Bangladesh") }}
+                    </div>
+                    <div class="language">বাংলা</div>
+                  </div>
+                  <div class="country-container">
+                    <div class="flag-container">
+                      <span class="flag-icon flag-icon-br"></span>
+                    </div>
+                    <div class="name">
+                      {{ gettext("Mozilla Brazil") }}
+                    </div>
+                    <div class="language">português do Brasil</div>
+                  </div>
+                  <div class="country-container">
+                    <div class="flag-container">
+                      <span class="flag-icon flag-icon-kh"></span>
+                    </div>
+                    <div class="name">
+                      {{ gettext("Mozilla Cambodia") }}
+                    </div>
+                    <div class="language">ខេមរភាសា</div>
+                  </div>
+                  <div class="country-container">
+                    <div class="flag-container">
+                      <span class="flag-icon flag-icon-co"></span>
+                    </div>
+                    <div class="name">
+                      {{ gettext("Mozilla Colombia") }}
+                    </div>
+                    <div class="language">español</div>
+                  </div>
+                  <div class="country-container">
+                    <div class="flag-container">
+                      <span class="flag-icon flag-icon-in"></span>
+                    </div>
+                    <div class="name">
+                      {{ gettext("Mozilla India") }}
+                    </div>
+                    <div class="language">हिन्दी</div>
+                  </div>
+                  <div class="country-container">
+                    <div class="flag-container">
+                      <span class="flag-icon flag-icon-id"></span>
+                    </div>
+                    <div class="name">
+                      {{ gettext("Mozilla Indonesia") }}
+                    </div>
+                    <div class="language">Bahasa Indonesia</div>
+                  </div>
+                  <div class="country-container">
+                    <div class="flag-container">
+                      <span class="flag-icon flag-icon-ke"></span>
+                    </div>
+                    <div class="name">
+                      {{ gettext("Mozilla Kenya") }}
+                    </div>
+                    <div class="language">Swahili</div>
+                  </div>
+                  <div class="country-container">
+                    <div class="flag-container">
+                      <span class="flag-icon flag-icon-ng"></span>
+                    </div>
+                    <div class="name">
+                      {{ gettext("Mozilla Nigeria") }}
+                    </div>
+                    <div class="language">English</div>
+                  </div>
+                  <div class="country-container">
+                    <div class="flag-container">
+                      <span class="flag-icon flag-icon-ph"></span>
+                    </div>
+                    <div class="name">
+                      {{ gettext("Mozilla Philippines") }}
+                    </div>
+                    <div class="language">English</div>
+                  </div>
+                  <div class="country-container">
+                    <div class="flag-container">
+                      <span class="flag-icon flag-icon-rw"></span>
+                    </div>
+                    <div class="name">
+                      {{ gettext("Mozilla Rwanda") }}
+                    </div>
+                    <div class="language">français</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 text-center">
+                  <a class="btn btn-default moi-btn" href="mailto:mobileopportunity@mozilla.org">
+                    <i class="fa fa-users"></i>
+                    {{ gettext("Get in touch") }}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- Partners section ===== -->
         <section id="moi-partners">
           <div class="container">
             <div class="row section-header">
@@ -350,6 +357,7 @@
             </div>
           </div>
         </section>
+        <!-- Quotes section ===== -->
         <section id="moi-quotes">
           <div class="container">
             <div class="row">
@@ -405,10 +413,6 @@
           </div>
         </section>
       </div>
-
-
-
-
 
     </main>
 
@@ -474,6 +478,19 @@
     });
     // quote carousel
     $("#quote-carousel").carousel();
+    // smooth scrolling to anchors. modified from http://css-tricks.com/snippets/jquery/smooth-scrolling/
+    $(".go-to-anchor-btn").click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 600);
+          return false;
+        }
+      }
+    });
   </script>
 
   {% endblock %}

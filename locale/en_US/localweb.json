@@ -4,7 +4,7 @@
     "description": "Big headline on /localweb"
   },
   "Mozilla is working to ensure": {
-    "message": "Mozilla is working to ensure that the next billion people to come online for the first time through their smartphones will discover a Web that's open, accessible and relevant.",
+    "message": "Mozilla is working to ensure that the next billion people to come online for the first time through their smartphones will discover a Web that's open, participatory and invites creativity.",
     "description": "This is a description to the value string"
   },
   "Partner with us": {
@@ -27,8 +27,8 @@
     "message": "Mozilla is leading a research program which aims to study technology and design approaches that enable greater participation in mobile digital life and grow local content creation. ",
     "description": "Subhead of Understanding Users section on /localweb"
   },
-  "Webmaker synthesis research report": {
-    "message": "Webmaker synthesis research report",
+  "A Locally Relevant Web: Early Research & Recommendations": {
+    "message": "A Locally Relevant Web: Early Research & Recommendations",
     "description": "Headline of the research report subsection on /localweb"
   },
   "In 2014 and 2015, we conducted on-the-ground studies in Bangladesh, India and Kenya.": {
@@ -72,7 +72,7 @@
     "description": "Headline of Partner with Mozilla section on /localweb"
   },
   "Let’s ensure the next generation of web users": {
-    "message": "Let’s ensure the next generation of web users have the skills to create a locally relevant web. We are a global movement with volunteers in over 30 countries. If you are a mobile operator or NGO, partner with us to offer digital skills training to your most engaged users.",
+    "message": "Let’s ensure the next generation of web users have the skills to create a locally relevant web. We are a global movement with volunteers in over 30 countries. If you are a mobile operator or NGO, <a href=\"\">partner with us</a> to offer digital skills training to your most engaged users.",
     "description": "Subhead of Partner with Mozilla section on /localweb"
   },
   "Mozilla Bangladesh": {
@@ -82,6 +82,10 @@
   "Mozilla Brazil": {
     "message": "Mozilla Brazil",
     "description": "Mozilla Brazil"
+  },
+  "Mozilla Cambodia": {
+    "message": "Mozilla Cambodia",
+    "description": "Mozilla Cambodia"
   },
   "Mozilla Colombia": {
     "message": "Mozilla Colombia",
@@ -99,10 +103,6 @@
     "message": "Mozilla Kenya",
     "description": "Mozilla Kenya"
   },
-  "Mozilla Mexico": {
-    "message": "Mozilla Mexico",
-    "description": "Mozilla Mexico"
-  },
   "Mozilla Nigeria": {
     "message": "Mozilla Nigeria",
     "description": "Mozilla Nigeria"
@@ -111,9 +111,9 @@
     "message": "Mozilla Philippines",
     "description": "Mozilla Philippines"
   },
-  "Mozilla South Africa": {
-    "message": "Mozilla South Africa",
-    "description": "Mozilla South Africa"
+  "Mozilla Rwanda": {
+    "message": "Mozilla Rwanda",
+    "description": "Mozilla Rwanda"
   },
   "Get in touch": {
     "message": "Get in touch",
