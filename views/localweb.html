@@ -64,7 +64,7 @@
 
                 <div class="navbar-collapse collapse">
                   <div class="navbar-form navbar-right">
-                    {% include "webmaker-language-picker/template/supportedLanguages.html" %}
+                    <select class="form-control" id="langPicker"></select>
                   </div>
 
                   <div class="navbar-form navbar-right">
@@ -516,50 +516,13 @@
       </div>
     </footer>
   </div>
-
-  <script src="https://mozorg.cdn.mozilla.net/tabzilla/tabzilla.js"></script>
-  <script src="/bower_components/jquery/jquery.min.js"></script>
-  <script src="/bower_components/selectize/dist/js/standalone/selectize.min.js"></script>
-  <script src="/bower_components/list.fuzzysearch.js/dist/list.fuzzysearch.min.js"></script>
-  <script src="/bower_components/listjs/dist/list.min.js"></script>
-  <script src="/bower_components/webmaker-i18n/localized.js"></script>
-  <script src="/bower_components/webmaker-language-picker/js/languages.js"></script>
-  <script src="/bower_components/bootstrap/js/transition.js"></script>
-  <script src="/bower_components/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-  <script src="/bower_components/bootstrap/js/carousel.js"></script>
-
-  {% block scripts %}
-  <script>
-    $window = $(window);
-    //parallax
-    $(window).scroll(function() {
-      var yPos = -($window.scrollTop() / 50);
-      $("#moi-video").css({ backgroundPosition: "50% "+ yPos + "px" });
-    });
-    // video lightbox
-    $(".moi-video-link").magnificPopup({
-      type: "iframe"
-    });
-    // quote carousel
-    $("#quote-carousel").carousel();
-    // smooth scrolling to anchors. modified from http://css-tricks.com/snippets/jquery/smooth-scrolling/
-    $(".go-to-anchor-btn").click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html,body').animate({
-            scrollTop: target.offset().top
-          }, 600);
-          return false;
-        }
-      }
-    });
-    // language dropdown
-    $("#supportedLocales").selectize();
+  <script src="/{{ localeInfo.lang }}/angular-config.js"></script>
+  <script id="require-js" src="/bower_components/requirejs/require.js"
+    data-main="{% block require_main %}/js/pages/localweb.js{% endblock %}"
+    data-page="{% block require_page %}{% endblock %}">
   </script>
 
-  {% endblock %}
+  {% block scripts %}{% endblock %}
 
   {% if ga_account %}
   <script id="google-analytics-js" src="/js/lib/google-analytics.js"
