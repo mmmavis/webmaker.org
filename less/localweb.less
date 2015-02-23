@@ -97,6 +97,9 @@
       clear: both;
     }
   }
+  .navbar {
+    border: none;
+  }
   #content {
     margin-bottom: 0;
   }
@@ -160,6 +163,19 @@
   .mfp-iframe-holder {
     .mfp-close {
       font-size: 4.5rem;
+    }
+  }
+}
+
+#moi-language-dropdown {
+  padding-right: 15rem;
+  .selectize-control.single {
+      min-width: 160px;
+    .selectize-input {
+      padding-right: 25px;
+      &:after {
+        right: 8px;
+      }
     }
   }
 }
@@ -230,7 +246,10 @@
     background-position: 110% 50%, 0 0;
   }
   #tabzilla {
-    display: block;
+    display: none;
+    @media screen and (min-width: @screen-sm-min) {
+      display: block;
+    }
   }
   .webmaker-workmark {
     margin-top: 1rem;
@@ -268,7 +287,7 @@
 #moi-video {
   background: linear-gradient(
                 rgba(red(@lightnavy),green(@lightnavy),blue(@lightnavy), .8),
-                rgba(red(@lightnavy),green(@lightnavy),blue(@lightnavy), .8),
+                rgba(red(@lightnavy),green(@lightnavy),blue(@lightnavy), .8)
               ),
               url("/img/moi/moi-video-preview.png") fixed;
   background-size: cover;

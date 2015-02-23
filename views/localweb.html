@@ -49,12 +49,71 @@
       <!-- Big hero banner section ===== -->
       <div>
         <div id="moi-panel">
+          <div id="webmaker-nav">
+            <nav class="navbar navbar-webmaker">
+              <div class="container">
+                <div class="navbar-header">
+                  <button class="navbar-toggle" nav-toggle>
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fa fa-bars fa-lg"></span>
+                  </button>
+                  <a href="/{{localeInfo.lang}}" class="logo webmaker-logo">
+                    <img src="/img/logo.png" alt="{{ gettext("Mozilla Webmaker") }}">
+                  </a>
+                </div>
+
+                <div class="navbar-collapse collapse">
+                  <div class="navbar-form navbar-right">
+                    {% include "webmaker-language-picker/template/supportedLanguages.html" %}
+                  </div>
+
+                  <div class="navbar-form navbar-right">
+                    <button class="btn btn-secondary-nav signin-button navbar-button navbar-right">{{ gettext("Sign in") }}</button>
+                    <button class="btn btn-primary join-button navbar-button navbar-right">{{ gettext("Join Webmaker") }}</button>
+                  </div>
+
+                  <ul class="nav navbar-nav navbar-right user-info-dropdown hidden">
+                    <li class="dropdown">
+                      <a class="navbar-user-info dropdown-toggle" data-toggle="dropdown">
+                        <img class="user-info-avatar" data-avatar>
+                        {{ gettext("Hi") }} <strong data-username></strong>
+                        <span class="hidden label label-primary" data-admin>admin</span>
+                        <span class="hidden label label-info" data-supermentor>supermentor</span>
+                        <span class="hidden label label-warning" data-mentor>mentor</span>
+                        <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a href="{{ webmaker }}/{{ localeInfo.lang }}/me">
+                            <span class="fa fa-fw fa-th-large"></span> My makes
+                          </a>
+                        </li>
+                        <li>
+                          <a data-profile data-href-template="{{ webmaker }}/{{ localeInfo.lang }}/user/{username}">
+                            <span class="fa fa-fw fa-user"></span> My profile
+                          </a>
+                        </li>
+                        <li>
+                          <a href="{{ loginAPI }}/{{ localeInfo.lang }}/account">
+                            <span class="fa fa-fw fa-cog"></span> My settings
+                          </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                          <a class="logout-button">
+                            <span class="fa fa-fw fa-sign-out"></span> Sign out
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
           <div class="container">
             <div class="row">
-              <div class="col-sm-12">
-                <a href="https://webmaker.org"><img src="img/moi/webmaker-wordmark.png" alt="Webmaker Wordmark" class="webmaker-workmark"></a>
-                <a href="https://www.mozilla.org/" id="tabzilla">mozilla</a>
-              </div>
+
             </div>
             <div class="row big-head-row">
               <section class="col-sm-7">
@@ -460,6 +519,11 @@
 
   <script src="https://mozorg.cdn.mozilla.net/tabzilla/tabzilla.js"></script>
   <script src="/bower_components/jquery/jquery.min.js"></script>
+  <script src="/bower_components/selectize/dist/js/standalone/selectize.min.js"></script>
+  <script src="/bower_components/list.fuzzysearch.js/dist/list.fuzzysearch.min.js"></script>
+  <script src="/bower_components/listjs/dist/list.min.js"></script>
+  <script src="/bower_components/webmaker-i18n/localized.js"></script>
+  <script src="/bower_components/webmaker-language-picker/js/languages.js"></script>
   <script src="/bower_components/bootstrap/js/transition.js"></script>
   <script src="/bower_components/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
   <script src="/bower_components/bootstrap/js/carousel.js"></script>
@@ -491,6 +555,8 @@
         }
       }
     });
+    // language dropdown
+    $("#supportedLocales").selectize();
   </script>
 
   {% endblock %}
