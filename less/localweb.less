@@ -197,6 +197,7 @@
       border: none;
       box-shadow: none;
       &:after {
+        display: block !important; // so this doesn't get hid by webmaker-language-picker/styles/languages
         border-color: @white transparent transparent;
       }
       &.dropdown-active:after {
