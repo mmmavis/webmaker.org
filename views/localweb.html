@@ -49,64 +49,31 @@
       <!-- Big hero banner section ===== -->
       <div>
         <div id="moi-panel">
-          <div id="webmaker-nav">
+          <div id="moi-nav">
             <nav class="navbar navbar-webmaker">
               <div class="container">
-                <div class="navbar-header">
-                  <button class="navbar-toggle" nav-toggle>
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="fa fa-bars fa-lg"></span>
-                  </button>
-                  <a href="/{{localeInfo.lang}}" class="logo webmaker-logo">
-                    <img src="/img/logo.png" alt="{{ gettext("Mozilla Webmaker") }}">
-                  </a>
-                </div>
-
-                <div class="navbar-collapse collapse">
-                  <div class="navbar-form navbar-right">
-                    <select class="form-control" id="langPicker"></select>
-                  </div>
-
-                  <div class="navbar-form navbar-right">
-                    <button class="btn btn-secondary-nav signin-button navbar-button navbar-right">{{ gettext("Sign in") }}</button>
-                    <button class="btn btn-primary join-button navbar-button navbar-right">{{ gettext("Join Webmaker") }}</button>
-                  </div>
-
-                  <ul class="nav navbar-nav navbar-right user-info-dropdown hidden">
-                    <li class="dropdown">
-                      <a class="navbar-user-info dropdown-toggle" data-toggle="dropdown">
-                        <img class="user-info-avatar" data-avatar>
-                        {{ gettext("Hi") }} <strong data-username></strong>
-                        <span class="hidden label label-primary" data-admin>admin</span>
-                        <span class="hidden label label-info" data-supermentor>supermentor</span>
-                        <span class="hidden label label-warning" data-mentor>mentor</span>
-                        <span class="caret"></span>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#moi-nav-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <a href="/{{localeInfo.lang}}" class="logo webmaker-logo">
+                        <img src="img/moi/webmaker-wordmark.png" alt="{{ gettext("Mozilla Webmaker") }}">
                       </a>
-                      <ul class="dropdown-menu">
-                        <li>
-                          <a href="{{ webmaker }}/{{ localeInfo.lang }}/me">
-                            <span class="fa fa-fw fa-th-large"></span> My makes
-                          </a>
-                        </li>
-                        <li>
-                          <a data-profile data-href-template="{{ webmaker }}/{{ localeInfo.lang }}/user/{username}">
-                            <span class="fa fa-fw fa-user"></span> My profile
-                          </a>
-                        </li>
-                        <li>
-                          <a href="{{ loginAPI }}/{{ localeInfo.lang }}/account">
-                            <span class="fa fa-fw fa-cog"></span> My settings
-                          </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                          <a class="logout-button">
-                            <span class="fa fa-fw fa-sign-out"></span> Sign out
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="navbar-collapse collapse" id="moi-nav-collapse">
+                      <div class="navbar-form">
+                        <select class="form-control" id="langPicker"></select>
+                      </div>
+                    </div>
+                    <a href="https://www.mozilla.org/" id="tabzilla">mozilla</a>
+                  </div>
                 </div>
               </div>
             </nav>

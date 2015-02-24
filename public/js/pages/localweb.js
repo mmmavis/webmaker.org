@@ -10,6 +10,7 @@ requirejs.config({
     'transition': '/bower_components/bootstrap/js/transition',
     'tabzilla': 'https://mozorg.cdn.mozilla.net/tabzilla/tabzilla',
     'selectize': '/bower_components/selectize/dist/js/standalone/selectize.min',
+    'collapse': '/bower_components/bootstrap/js/collapse',
     'carousel': '/bower_components/bootstrap/js/carousel'
   },
   shim: {
@@ -18,7 +19,7 @@ requirejs.config({
   }
 });
 
-require(["jquery", "languages", "selectize", "transition", "carousel", "magnific-popup"], function ($, languages, selectize ) {
+require(["jquery", "languages", "selectize", "transition", "collapse", "carousel", "magnific-popup"], function ($, languages, selectize ) {
   "use strict";
   var $window = $(window);
   //parallax

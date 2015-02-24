@@ -167,14 +167,40 @@
   }
 }
 
-#moi-language-dropdown {
-  padding-right: 15rem;
+#moi-nav {
+  .navbar-webmaker {
+    background: none;
+    padding-top: 0;
+  }
+  .navbar-toggle {
+    background: @white;
+    padding: .9rem 1rem;
+    .icon-bar {
+      width: 1.6rem;
+    }
+  }
+  .navbar-form {
+    margin-bottom: 4rem;
+    @media screen and (min-width: @screen-sm-min) {
+      float: right;
+      margin-right: 13rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+#moi-nav-collapse {
   .selectize-control.single {
-      min-width: 160px;
     .selectize-input {
-      padding-right: 25px;
+      color: @white;
+      background: none;
+      border: none;
+      box-shadow: none;
       &:after {
-        right: 8px;
+        border-color: @white transparent transparent;
+      }
+      &.dropdown-active:after {
+        border-color: transparent transparent @white;
       }
     }
   }
