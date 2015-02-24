@@ -7,7 +7,7 @@
   "scripts": {
     "test": "grunt validate",
     "start": "grunt dev",
-    "postinstall": "bower install && grunt build",
+    "postinstall": "bower install && grunt build && npm run download-locales",
     "download-locales": "webmaker-download-locales webmaker"
   },
   "repository": {

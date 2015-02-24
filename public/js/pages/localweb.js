@@ -47,19 +47,32 @@ require(["jquery", "languages", "selectize", "transition", "collapse", "carousel
     }
   });
   var $element = $('#langPicker');
+  var highlightLangs = [ "bn", "hi-IN", "pt-BR" ]; // P1 languages for /localweb page: Bangla, Hindi, Brazilian Portuguese
+  var otherLangs = [ "en-US", "da-DK", "sq", "sv", "es-CL", "fr", "ru", "fl", "es-MX" ]; // other languages that are at least 90% complete
+  var highlightOptions = [];
   var options = [];
   var lang;
+  var langData;
   var config = window.angularConfig;
+
+  function createLangData(lang) {
+    return  {
+              id: lang,
+              title: config.langmap[lang] ? config.langmap[lang].nativeName : lang,
+              english: config.langmap[lang] && config.langmap[lang].englishName
+            };
+  }
+
   for (var i = 0; i < config.supported_languages.length; i++) {
     lang = config.supported_languages[i];
-    options.push({
-      id: lang,
-      title: config.langmap[lang] ? config.langmap[lang].nativeName : lang,
-      english: config.langmap[lang] && config.langmap[lang].englishName
-    });
+    if ( highlightLangs.indexOf(lang) >= 0 ) {
+      highlightOptions.push(createLangData(lang));
+    } else if ( otherLangs.indexOf(lang) >= 0 ) {
+      options.push(createLangData(lang));
+    }
   }
     $element.selectize({
-      options: options,
+      options: highlightOptions.concat(options),
       labelField: 'title',
       valueField: 'id',
       searchField: ['title', 'english'],
