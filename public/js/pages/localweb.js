@@ -15,6 +15,7 @@ requirejs.config({
   },
   shim: {
     'transition': ['jquery'],
+    'collapse': ['jquery'],
     'carousel': ['jquery']
   }
 });
