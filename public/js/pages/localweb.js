@@ -23,16 +23,13 @@ requirejs.config({
 require(["jquery", "analytics", "languages", "selectize", "transition", "collapse", "carousel", "magnific-popup"], function ($, analytics, languages, selectize ) {
   "use strict";
   var $window = $(window);
-  var TIME_DELAYED_REDIRECT = 1000; // in milliseconds
+  var TIME_DELAYED_REDIRECT = 500; // in milliseconds
   // analytics
   var delayRedirect = function(url) {
     setTimeout(function() {
       window.location.href = url;
     }, TIME_DELAYED_REDIRECT);
   };
-  $("#header-partner-with-us-link").click(function() {
-    analytics.event("Click on Partner with Us");
-  });
   $("#try-the-open-beta-link").click(function() {
     analytics.event("Try the Open Beta");
   });
