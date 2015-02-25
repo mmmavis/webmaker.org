@@ -32,7 +32,7 @@
     "description": "Headline of Understanding Users section on /localweb"
   },
   "Mozilla is leading a research program": {
-    "message": "Mozilla is leading a research program which aims to study technology and design approaches that enable greater participation in mobile digital life and grow local content creation. ",
+    "message": "Mozilla is leading a research program which aims to study technology and design approaches that enable greater participation in mobile digital life and grow local content creation.",
     "description": "Subhead of Understanding Users section on /localweb"
   },
   "A Locally Relevant Web: Early Research & Recommendations": {
@@ -80,7 +80,7 @@
     "description": "Headline of Partner with Mozilla section on /localweb"
   },
   "Let’s ensure the next generation of web users": {
-    "message": "Let’s ensure the next generation of web users have the skills to create a locally relevant web. <b>We are a global movement with volunteers in over 30 countries</b>. If you are a mobile operator or NGO, <a href=\"https://stuff.webmaker.org/mobile_webmaker_partners.pdf\">partner with us</a> to offer digital skills training to your most engaged users.",
+    "message": "Let’s ensure the next generation of web users have the skills to create a locally relevant web. <b>We are a global movement with volunteers in over 30 countries</b>. If you are a mobile operator or NGO, <a href=\"https://stuff.webmaker.org/mobile_webmaker_partners.pdf\" id=\"mobile-webmaker-partners-link\">partner with us</a> to offer digital skills training to your most engaged users.",
     "description": "Subhead of Partner with Mozilla section on /localweb"
   },
   "Mozilla Bangladesh": {
