@@ -48,67 +48,54 @@ require(["jquery", "languages", "selectize", "transition", "collapse", "carousel
     }
   });
   var $element = $('#langPicker');
-  var highlightLangs = [ "bn", "hi-IN", "pt-BR" ]; // P1 languages for /localweb page: Bangla, Hindi, Brazilian Portuguese
-  var otherLangs = [ "en-US", "da-DK", "sq", "sv", "es-CL", "fr", "ru", "fl", "es-MX" ]; // other languages that are at least 90% complete
-  var highlightOptions = [];
   var options = [];
   var lang;
-  var langData;
   var config = window.angularConfig;
-
-  function createLangData(lang) {
-    return  {
-              id: lang,
-              title: config.langmap[lang] ? config.langmap[lang].nativeName : lang,
-              english: config.langmap[lang] && config.langmap[lang].englishName
-            };
-  }
-
   for (var i = 0; i < config.supported_languages.length; i++) {
     lang = config.supported_languages[i];
-    if ( highlightLangs.indexOf(lang) >= 0 ) {
-      highlightOptions.push(createLangData(lang));
-    } else if ( otherLangs.indexOf(lang) >= 0 ) {
-      options.push(createLangData(lang));
-    }
+    options.push({
+      id: lang,
+      title: config.langmap[lang] ? config.langmap[lang].nativeName : lang,
+      english: config.langmap[lang] && config.langmap[lang].englishName
+    });
   }
-    $element.selectize({
-      options: highlightOptions.concat(options),
-      labelField: 'title',
-      valueField: 'id',
-      searchField: ['title', 'english'],
-      onItemAdd: function (selectedLang) {
-        if (selectedLang) {
-          var href = window.location.pathname;
-          var lang = config.lang;
-          var supportedLanguages = config.supported_languages;
+  $element.selectize({
+    options: options,
+    labelField: 'title',
+    valueField: 'id',
+    searchField: ['title', 'english'],
+    onItemAdd: function (selectedLang) {
+      if (selectedLang) {
+        var href = window.location.pathname;
+        var lang = config.lang;
+        var supportedLanguages = config.supported_languages;
 
-          // matches any of these:
-          // `en`, `en-us`, `en-US` or `ady`
-          var matchesLang;
-          var matches = href.match(/([a-z]{2,3})([-]([a-zA-Z]{2}))?/);
-          if (matches) {
-            if (matches[1] && matches[2]) {
-              matchesLang = matches[1].toLowerCase() + matches[2].toUpperCase();
-            } else {
-              matchesLang = matches[1].toLowerCase();
-            }
-          }
-          // if the selected language is match to the language in the header
-          if (selectedLang === lang) {
-            return;
-            // check if we have any matches and they are exist in the array we have
-          } else if ((matches && matches[0]) && supportedLanguages.indexOf(matchesLang) !== -1) {
-            href = href.replace(matches[0], selectedLang);
-            window.location = href;
-          } else if (href === '/') {
-            window.location = '/' + selectedLang;
+        // matches any of these:
+        // `en`, `en-us`, `en-US` or `ady`
+        var matchesLang;
+        var matches = href.match(/([a-z]{2,3})([-]([a-zA-Z]{2}))?/);
+        if (matches) {
+          if (matches[1] && matches[2]) {
+            matchesLang = matches[1].toLowerCase() + matches[2].toUpperCase();
           } else {
-            window.location = '/' + selectedLang + href;
+            matchesLang = matches[1].toLowerCase();
           }
         }
+        // if the selected language is match to the language in the header
+        if (selectedLang === lang) {
+          return;
+          // check if we have any matches and they are exist in the array we have
+        } else if ((matches && matches[0]) && supportedLanguages.indexOf(matchesLang) !== -1) {
+          href = href.replace(matches[0], selectedLang);
+          window.location = href;
+        } else if (href === '/') {
+          window.location = '/' + selectedLang;
+        } else {
+          window.location = '/' + selectedLang + href;
+        }
       }
-    });
-    var selectize = $element[0].selectize;
-    selectize.setValue(config.lang);
+    }
+  });
+  var selectize = $element[0].selectize;
+  selectize.setValue(config.lang);
 });
