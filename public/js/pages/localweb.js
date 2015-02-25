@@ -20,9 +20,35 @@ requirejs.config({
   }
 });
 
-require(["jquery", "languages", "selectize", "transition", "collapse", "carousel", "magnific-popup"], function ($, languages, selectize ) {
+require(["jquery", "analytics", "languages", "selectize", "transition", "collapse", "carousel", "magnific-popup"], function ($, analytics, languages, selectize ) {
   "use strict";
   var $window = $(window);
+  var TIME_DELAYED_REDIRECT = 1000; // in milliseconds
+  // analytics
+  var delayRedirect = function(url) {
+    setTimeout(function() {
+      window.location.href = url;
+    }, TIME_DELAYED_REDIRECT);
+  };
+  $("#header-partner-with-us-link").click(function() {
+    analytics.event("Click on Partner with Us");
+  });
+  $("#try-the-open-beta-link").click(function() {
+    analytics.event("Try the Open Beta");
+  });
+  $("#moi-video-play-btn").click(function() {
+    analytics.event("Play Video", {label: "MOI Partner Opportunity"});
+  });
+  $(".report-links").click(function(event) {
+    event.preventDefault();
+    analytics.event("Download Report", {label: $(this).data("report-name")});
+    delayRedirect($(this).attr("href"));
+  });
+  $("#mobile-webmaker-partners-link").click(function() {
+    event.preventDefault();
+    analytics.event("Click on Partner with Us PDF link");
+    delayRedirect($(this).attr("href"));
+  });
   //parallax
   $(window).scroll(function() {
     var yPos = -($(window).scrollTop() / 50);
