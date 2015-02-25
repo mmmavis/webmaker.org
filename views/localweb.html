@@ -99,7 +99,7 @@
                   <img src="img/moi/font-awesome-fa-users.png" alt="FontAwesome users icon">
                   {{ gettext("Partner with us") }}
                 </a>
-                <a class="btn btn-default moi-btn" href="http://mzl.la/webmaker">
+                <a class="btn btn-default moi-btn" href="http://mzl.la/webmaker" id="try-the-open-beta-link">
                   <i class="fa icon-share"></i>
                   {{ gettext("Try the open beta") }}
                 </a>
@@ -115,7 +115,7 @@
                 <h3>{{ gettext("The Opportunity: A Locally Relevant Web") }}</h3>
                 <h5 style="color: yellow;">( <u><b>PLACEHOLDER</b></u> background & video )</h5>
                 <div class="text-center play-icon">
-                  <a href="https://www.youtube.com/watch?v=SqEQCU_pvKs" class="moi-video-link"><i class="fa icon-play-sign icon-5x"></i></a>
+                  <a href="https://www.youtube.com/watch?v=SqEQCU_pvKs" class="moi-video-link" id="moi-video-play-btn"><i class="fa icon-play-sign icon-5x"></i></a>
                 </div>
               </div>
             </div>
@@ -179,7 +179,7 @@
               </div>
               <div class="col-sm-offset-1 col-sm-6">
                 <div id="moi-webmaker-research-reports">
-                  <a class="header" href="">
+                  <a class="header report-links" href="http://mzl.la/research" data-report-name="Webmaker early research report">
                     <div class="icon">
                       <i class="fa icon-file-text icon-3x"></i>
                     </div>
@@ -194,16 +194,16 @@
                   </a>
                   <ul>
                     <li>
-                      <a href="http://mzl.la/bangladesh">{{ gettext("Webmaker Bangladesh research report") }}</a>
+                      <a href="http://mzl.la/bangladesh" class="report-links" data-report-name="Webmaker Bangladesh research report">{{ gettext("Webmaker Bangladesh research report") }}</a>
                     </li>
                     <li>
-                      <a href="http://mzl.la/kenya">{{ gettext("Webmaker Kenya research report") }}</a>
+                      <a href="http://mzl.la/kenya" class="report-links" data-report-name="Webmaker Kenya research report">{{ gettext("Webmaker Kenya research report") }}</a>
                     </li>
                     <li>
-                      <a href="">{{ gettext("Webmaker India research report") }}</a>
+                      <a href="http://mzl.la/india" class="report-links" data-report-name="Webmaker India research report">{{ gettext("Webmaker India research report") }}</a>
                     </li>
                     <li>
-                      <a href="http://blog.mozilla.org/m4d/">{{ gettext("Webmaker mobile for development blog") }}</a>
+                      <a href="http://blog.mozilla.org/m4d/" class="report-links" data-report-name="Webmaker mobile for development blog">{{ gettext("Webmaker mobile for development blog") }}</a>
                     </li>
                   </ul>
                 </div>
