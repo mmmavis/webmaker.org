@@ -447,7 +447,7 @@
 }
 
 #moi-partners {
-  .tier-one-partners-row {
+  .tier-one-partners-section {
     padding-bottom: 5rem;
     margin-bottom: 5rem;
     border-bottom: .1rem solid @moi-border-grey;
@@ -464,22 +464,18 @@
       }
     }
   }
-  .tier-two-partners-row {
-
-  }
   .tier-two-partners {
-    float: left;
-    width: 33.33%;
-    margin-bottom: 2rem;
-    @media screen and (min-width: @screen-sm-min) {
-      width: 20%;
-      margin-bottom: 4rem;
+    line-height: 9rem;
+    img {
+      max-width: 9rem;
     }
-    .logo-placeholder {
-      background: #BBB;
-      width: 80%;
-      height: 10rem;
-      margin: 0 auto;
+    a {
+      @media screen and (min-width: @screen-sm-min) {
+        line-height: 15rem;
+        img {
+          max-width: 15rem;
+        }
+      }
     }
   }
 }
