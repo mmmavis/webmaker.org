@@ -210,12 +210,12 @@
 #moi-panel {
   color: @white;
   background-color: @darkgreen;
-  padding-bottom: 8rem;
+  padding-bottom: 3rem;
   background-image: url("/img/moi/hand-mobile.png"),
                     url("/img/moi/background-green.jpg");
   background-repeat: no-repeat, no-repeat;
-  background-size: 70% auto, cover;
-  background-position: 100% 65%, 0 0;
+  background-size: auto 20rem, cover;
+  background-position: 100% 70%, 0 0;
   border-top: .2rem solid @white;
   h1 {
     font-size: 3.5rem;
@@ -248,6 +248,7 @@
     background-size: auto 25rem, cover;
   }
   @media screen and (min-width: @screen-sm-min) {
+    padding-bottom: 7rem;
     background-size: auto 60%, cover;
     background-position: 45rem 50%, 0 0;
   }
@@ -293,7 +294,10 @@
   }
   .lead {
     .moi-open-sans;
-    padding-bottom: 27rem;
+    padding-bottom: 20rem;
+    @media screen and (min-width: @screen-xs-min) {
+      padding-bottom: 30rem;
+    }
     @media screen and (min-width: @screen-sm-min) {
       padding-bottom: 3rem;
     }
