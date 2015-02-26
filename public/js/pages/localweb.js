@@ -30,8 +30,10 @@ require(["jquery", "analytics", "languages", "selectize", "transition", "collaps
       window.location.href = url;
     }, TIME_DELAYED_REDIRECT);
   };
-  $("#try-the-open-beta-link").click(function() {
+  $(".try-the-open-beta-btn").click(function(event) {
+    event.preventDefault();
     analytics.event("Try the Open Beta");
+    delayRedirect($(this).attr("href"));
   });
   $("#moi-video-play-btn").click(function() {
     analytics.event("Play Video", {label: "MOI Partner Opportunity"});
